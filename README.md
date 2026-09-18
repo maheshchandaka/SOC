@@ -61,9 +61,8 @@ DeviceNetworkEvents
 | where LocalIP contains "FIXME"
 | summarize min(TimeGenerated), max(TimeGenerated) by DeviceName, LocalIP
 | sort by max_TimeGenerated desc
-ClickFIX
 
-
+**ClickFIX**
 
 - The user has been marked as compromised. If a Conditional Access policy is configured, their password will be reset automatically and this request can be ignored. If no such policy is in place, please reset their credentials manually.
 - Please remove the registry key from the device before removing from isolation, or re-image the device if the registry key cannot be removed completely.
@@ -406,6 +405,7 @@ For Signin logs
 let IPs = dynamic(["188.130.221.181", "45.11.20.150"]);
 custSigninLogs
 | where IPAddress has_any (IPs)
+
 Both Failed and Successful logs
 
 
